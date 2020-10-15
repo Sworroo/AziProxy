@@ -12,13 +12,20 @@ namespace Proxy_by_Azi
     class Program
     {
         private static string refferer;
-
+        public static string id = "client_id.azic";
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter your Client ID: ");
-            refferer = Console.ReadLine();
+            if(!File.Exists(id))
+            {
+                Console.WriteLine("Enter your Client ID: ");
+                refferer = Console.ReadLine();
+                File.WriteAllText(id, refferer);
+            }
+            else
+            {
+                refferer = File.ReadAllText(id);
+            }
             GetProxys();
-            Console.WriteLine("\nProxy list loaded!\n");
             start();
             Console.ReadKey();
         }
@@ -56,6 +63,7 @@ namespace Proxy_by_Azi
                             Match objectValue = (Match)RuntimeHelpers.GetObjectValue(obj);
                             ProxyList.Add(objectValue.Value);
                         }
+                        Console.WriteLine("\nProxy list loaded!\n");
                     }
                     finally
                     {
