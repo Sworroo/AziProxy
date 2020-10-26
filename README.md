@@ -1,12 +1,12 @@
 # AziProxy
 Simple tool to add free GB's(TB's) to your WARP account
 # Get id
-Open 1.1.1.1 App
-Click on the Hamburger Menu Icon ☰
-Advanced > Diagonistics
-Under Client Configuration > Copy the ID
-
-Открываем приложение 1.1.1.
-Нажимаем на меню ☰
-Дополнительно > Диагностика
-Находим ID и копируем
+1. Open 1.1.1.1 App
+2. Click on the Hamburger Menu Icon ☰
+3. Advanced > Diagonistics 
+4. Under Client Configuration > Copy the ID
+# Получаем id
+1. Открываем приложение 1.1.1.
+2. Нажимаем на меню ☰
+3. Дополнительно > Диагностика
+4. Находим ID и копируем
