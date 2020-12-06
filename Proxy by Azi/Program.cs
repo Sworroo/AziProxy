@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Net;
 using System.Runtime.CompilerServices;
@@ -28,6 +29,14 @@ namespace Proxy_by_Azi
             GetProxys();
             start();
             Console.ReadKey();
+        }
+
+        private static string exe()
+        {
+            if (System.Runtime.InteropServices.RuntimeInformation.IsOSPlatform(System.Runtime.InteropServices.OSPlatform.Windows))
+                return ".exe";
+            else
+                return "";
         }
 
         public static List<string> ProxyList = new List<string>();
@@ -80,9 +89,8 @@ namespace Proxy_by_Azi
         }
         public static void restartAPP()
         {
-            GetProxys();
-            Console.WriteLine("ProxyList reloaded");
-            start();
+            Process.Start(System.IO.Directory.GetCurrentDirectory() + "\\" + System.AppDomain.CurrentDomain.FriendlyName + exe());
+            Environment.Exit(0);
         }
         private static void start()
         {
@@ -99,7 +107,8 @@ namespace Proxy_by_Azi
                         ThreadPool.QueueUserWorkItem(new WaitCallback(mtd), state);
                     }
                     //Console.WriteLine("END OF PROXYLIST"); //for debug
-                    restartAPP();
+                    GetProxys();
+                    start();
                 }
                 catch (Exception error)
                 {
@@ -126,9 +135,6 @@ namespace Proxy_by_Azi
         }
         public static void mtd(object Proxiess)
         {
-            bool start = _start;
-            if (start)
-            {
                 try
                 {
                     string host = Proxiess.ToString().Split(new char[]
@@ -197,5 +203,4 @@ namespace Proxy_by_Azi
                 }
             }
         }
-    }
 }
