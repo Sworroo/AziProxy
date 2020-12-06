@@ -89,7 +89,7 @@ namespace Proxy_by_Azi
         }
         public static void restartAPP()
         {
-            Process.Start(System.IO.Directory.GetCurrentDirectory() + "\\" + System.AppDomain.CurrentDomain.FriendlyName + exe());
+            Process.Start(System.IO.Directory.GetCurrentDirectory() + "\\" + Process.GetCurrentProcess().ProcessName + exe());
             Environment.Exit(0);
         }
         private static void start()
