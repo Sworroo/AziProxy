@@ -97,7 +97,7 @@ namespace Proxy_by_Azi
             if (ProxyList.Count != 0)
             {
                 _start = true;
-                int num = 100;
+                int num = 200;
                 ThreadPool.SetMinThreads(num, num);
                 ThreadPool.SetMaxThreads(num, num);
                 try
@@ -187,6 +187,7 @@ namespace Proxy_by_Azi
                     httpResponse = null;
                     _test++;
                     _send++;
+                    Console.Clear();
                     if (_send > 128)
                     {
                         Console.WriteLine(Math.Round((double)_send / 1024, 2, MidpointRounding.AwayFromZero) + " TB Successfully added to your account.");
