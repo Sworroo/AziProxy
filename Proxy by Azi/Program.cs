@@ -90,8 +90,16 @@ namespace Proxy_by_Azi
         }
         public static void restartAPP()
         {
-            Process.Start(System.IO.Directory.GetCurrentDirectory() + "\\" + Process.GetCurrentProcess().ProcessName + exe());
-            Environment.Exit(0);
+            
+            if (System.Runtime.InteropServices.RuntimeInformation.IsOSPlatform(System.Runtime.InteropServices.OSPlatform.Windows))
+            {
+                Process.Start(System.IO.Directory.GetCurrentDirectory() + "\\" + Process.GetCurrentProcess().ProcessName + exe());
+                Environment.Exit(0);
+            }
+            else{
+                Process.Start(System.Reflection.Assembly.GetExecutingAssembly().Location);
+                Environment.Exit(0);
+            }
         }
         private static void start()
         {
@@ -147,8 +155,9 @@ namespace Proxy_by_Azi
         }
         public static void mtd(object Proxiess)
         {
-            if(_test != 0)
-                if(ProxyList.Capacity / _test < 1.1){Console.WriteLine("Optimization?");restartAPP();}
+            if (System.Runtime.InteropServices.RuntimeInformation.IsOSPlatform(System.Runtime.InteropServices.OSPlatform.Windows))
+                if (_test != 0)
+                    if(ProxyList.Capacity / _test < 1.1){Console.WriteLine("Optimization?");restartAPP();}
             try
             {
                 if (Proxiess == null)

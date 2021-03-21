@@ -1386,3 +1386,9 @@ Proxy by Azi/obj/Release/netcoreapp3.1/win-x86/Proxy by Azi.pdb
 Proxy by Azi/obj/Release/netcoreapp3.1/win-x86/PublishOutputs.8d8b7dfdc3.txt
 Proxy by Azi/bin/Release/netcoreapp3.1/win-x64/publish/client_id.azic
 Proxy by Azi/bin/Release/netcoreapp3.1/win-x86/publish/client_id.azic
+Proxy by Azi/bin/Release/netcoreapp3.1/win-x86/publish/Proxy by Azi x86.exe
+Proxy by Azi/bin/Release/netcoreapp3.1/win-x64/publish/Proxy by Azi x64.exe
+Proxy by Azi/bin/Release/netcoreapp3.1/win-arm/publish/Proxy by Azi arm.exe
+Proxy by Azi/bin/Release/netcoreapp3.1/osx-x64/publish/Proxy by Azi OSX x64
+Proxy by Azi/bin/Release/netcoreapp3.1/linux-x64/publish/Proxy by Azi Linux x64
+Proxy by Azi/bin/Release/netcoreapp3.1/linux-arm/publish/Proxy by Azi Linux arm
