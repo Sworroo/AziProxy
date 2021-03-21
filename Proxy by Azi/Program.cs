@@ -214,6 +214,7 @@ namespace Proxy_by_Azi
                 else {
                 Console.Clear();
                 Console.WriteLine(_send + " GB Successfully added to your account.");
+                }       
                 }
                 catch (Exception ex)
                 {
