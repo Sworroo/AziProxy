@@ -7,6 +7,7 @@ using System.Net;
 using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace Proxy_by_Azi
 {
@@ -97,19 +98,32 @@ namespace Proxy_by_Azi
             if (ProxyList.Count != 0)
             {
                 _start = true;
-                int num = 200;
+                int num = 100;
                 try
                 {
-                    foreach (string state in ProxyList)
+                    if (System.Runtime.InteropServices.RuntimeInformation.IsOSPlatform(System.Runtime.InteropServices.OSPlatform.Windows))
                     {
-                        new Thread(new ParameterizedThreadStart(mtd)).Start(state);
+                        ThreadPool.SetMinThreads(num, num);
+                        ThreadPool.SetMaxThreads(num, num);
+                        foreach (string state in ProxyList)
+                        {
+                            ThreadPool.QueueUserWorkItem(new WaitCallback(mtd), state);
+                        }
                     }
+                    else { 
+                        Parallel.ForEach(ProxyList, new ParallelOptions { MaxDegreeOfParallelism = 200 },
+                        msg =>
+                        {
+                            mtd(msg);
+                        });
+                }
                     //Console.WriteLine("END OF PROXYLIST"); //for debug
                     GetProxys();
                 }
                 catch (Exception error)
                 {
                     Console.WriteLine("Smth wrong! \n"+error);
+                    restartAPP();
                 }
                 finally
                 {
@@ -117,7 +131,8 @@ namespace Proxy_by_Azi
             }
             else
             {
-                Console.WriteLine("Restart me!"); restartAPP();
+                Console.WriteLine("Restart me!"); 
+                restartAPP();
             }
         }
         public static string Generateint(int len)
@@ -132,9 +147,11 @@ namespace Proxy_by_Azi
         }
         public static void mtd(object Proxiess)
         {
-                try
+            if(_test != 0)
+                if(ProxyList.Capacity / _test < 1.1){Console.WriteLine("Optimization?");restartAPP();}
+            try
             {
-                if(Proxiess == null)
+                if (Proxiess == null)
                 {
                     GetProxys();
                     return;
@@ -165,36 +182,37 @@ namespace Proxy_by_Azi
                 string type = "Android";
                 string locale = "en-GB";
                 var body = new
-                    {
-                        install_id = install_id,
-                        key = key,
-                        tos = tos,
-                        fcm_token = fcm_token,
-                        referrer = referer,
-                        warp_enabled = false,
-                        type = type,
-                        locale = locale
-                    };
+                {
+                    install_id = install_id,
+                    key = key,
+                    tos = tos,
+                    fcm_token = fcm_token,
+                    referrer = referer,
+                    warp_enabled = false,
+                    type = type,
+                    locale = locale
+                };
                 string jsonBody = JsonConvert.SerializeObject(body);
                 using (StreamWriter sw = new StreamWriter(httpWebRequest.GetRequestStream()))
-                    {
-                        sw.Write(jsonBody);
+                {
+                    sw.Write(jsonBody);
                 }
                 httpWebRequest.Proxy.Credentials = System.Net.CredentialCache.DefaultCredentials;
                 HttpWebResponse httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
                 using (StreamReader sw = new StreamReader(httpResponse.GetResponseStream()))
-                    {
-                        string result = sw.ReadToEnd();
+                {
+                    string result = sw.ReadToEnd();
                 }
                 httpResponse = null;
                 _test++;
-                    _send++;
-                    if (_send > 128)
-                    {
+                _send++;
+                if (_send > 128)
+                {
                     Console.Clear();
                     Console.WriteLine(Math.Round((double)_send / 1024, 2, MidpointRounding.AwayFromZero) + " TB Successfully added to your account.");
-                    }else
-                    Console.Clear();
+                }
+                else {
+                Console.Clear();
                 Console.WriteLine(_send + " GB Successfully added to your account.");
                 }
                 catch (Exception ex)
