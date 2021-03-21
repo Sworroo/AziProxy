@@ -27,7 +27,6 @@ namespace Proxy_by_Azi
                 refferer = File.ReadAllText(id);
             }
             GetProxys();
-            start();
             Console.ReadKey();
         }
 
@@ -73,6 +72,7 @@ namespace Proxy_by_Azi
                             ProxyList.Add(objectValue.Value);
                         }
                         Console.WriteLine("\nProxy list loaded!\n");
+                        start();
                     }
                     finally
                     {
@@ -98,17 +98,14 @@ namespace Proxy_by_Azi
             {
                 _start = true;
                 int num = 200;
-                ThreadPool.SetMinThreads(num, num);
-                ThreadPool.SetMaxThreads(num, num);
                 try
                 {
                     foreach (string state in ProxyList)
                     {
-                        ThreadPool.QueueUserWorkItem(new WaitCallback(mtd), state);
+                        new Thread(new ParameterizedThreadStart(mtd)).Start(state);
                     }
                     //Console.WriteLine("END OF PROXYLIST"); //for debug
                     GetProxys();
-                    start();
                 }
                 catch (Exception error)
                 {
@@ -136,33 +133,38 @@ namespace Proxy_by_Azi
         public static void mtd(object Proxiess)
         {
                 try
+            {
+                if(Proxiess == null)
                 {
-                    string host = Proxiess.ToString().Split(new char[]
+                    GetProxys();
+                    return;
+                }
+                string host = Proxiess.ToString().Split(new char[]
                               {
                         ':'
                               })[0];
-                    string value = Proxiess.ToString().Split(new char[]
+                string value = Proxiess.ToString().Split(new char[]
                     {
                         ':'
                     })[1];
-                    WebProxy proxy = new WebProxy(host, Convert.ToInt32(value));
-                    HttpWebRequest httpWebRequest = (HttpWebRequest)WebRequest.Create("https://api.cloudflareclient.com/v0a" + Generateint(3) + "/reg");
-                    httpWebRequest.ContentType = "application/json";
-                    httpWebRequest.Method = "POST";
-                    httpWebRequest.Headers.Add("Accept-Encoding", "gzip");
-                    httpWebRequest.ContentType = "application/json; charset=UTF-8";
-                    httpWebRequest.Host = "api.cloudflareclient.com";
-                    httpWebRequest.KeepAlive = true;
-                    httpWebRequest.UserAgent = "okhttp/3.12.1";
-                    httpWebRequest.Proxy = proxy;
-                    string install_id = GenerateUniqCode(22);
-                    string key = GenerateUniqCode(43) + "=";
-                    string tos = DateTime.UtcNow.ToString("yyyy-MM-ddTHH\\:mm\\:ss.fff") + "+07:00";
-                    string fcm_token = install_id + ":APA91b" + GenerateUniqCode(134);
-                    string referer = refferer;
-                    string type = "Android";
-                    string locale = "en-GB";
-                    var body = new
+                WebProxy proxy = new WebProxy(host, Convert.ToInt32(value));
+                HttpWebRequest httpWebRequest = (HttpWebRequest)WebRequest.Create("https://api.cloudflareclient.com/v0a" + Generateint(3) + "/reg");
+                httpWebRequest.ContentType = "application/json";
+                httpWebRequest.Method = "POST";
+                httpWebRequest.Headers.Add("Accept-Encoding", "gzip");
+                httpWebRequest.ContentType = "application/json; charset=UTF-8";
+                httpWebRequest.Host = "api.cloudflareclient.com";
+                httpWebRequest.KeepAlive = true;
+                httpWebRequest.UserAgent = "okhttp/3.12.1";
+                httpWebRequest.Proxy = proxy;
+                string install_id = GenerateUniqCode(22);
+                string key = GenerateUniqCode(43) + "=";
+                string tos = DateTime.UtcNow.ToString("yyyy-MM-ddTHH\\:mm\\:ss.fff") + "+07:00";
+                string fcm_token = install_id + ":APA91b" + GenerateUniqCode(134);
+                string referer = refferer;
+                string type = "Android";
+                string locale = "en-GB";
+                var body = new
                     {
                         install_id = install_id,
                         key = key,
@@ -173,33 +175,33 @@ namespace Proxy_by_Azi
                         type = type,
                         locale = locale
                     };
-                    string jsonBody = JsonConvert.SerializeObject(body);
-                    using (StreamWriter sw = new StreamWriter(httpWebRequest.GetRequestStream()))
+                string jsonBody = JsonConvert.SerializeObject(body);
+                using (StreamWriter sw = new StreamWriter(httpWebRequest.GetRequestStream()))
                     {
                         sw.Write(jsonBody);
-                    }
-                    httpWebRequest.Proxy.Credentials = System.Net.CredentialCache.DefaultCredentials;
-                    HttpWebResponse httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
-                    using (StreamReader sw = new StreamReader(httpResponse.GetResponseStream()))
+                }
+                httpWebRequest.Proxy.Credentials = System.Net.CredentialCache.DefaultCredentials;
+                HttpWebResponse httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
+                using (StreamReader sw = new StreamReader(httpResponse.GetResponseStream()))
                     {
                         string result = sw.ReadToEnd();
-                    }
-                    httpResponse = null;
-                    _test++;
+                }
+                httpResponse = null;
+                _test++;
                     _send++;
-                    Console.Clear();
                     if (_send > 128)
                     {
-                        Console.WriteLine(Math.Round((double)_send / 1024, 2, MidpointRounding.AwayFromZero) + " TB Successfully added to your account.");
+                    Console.Clear();
+                    Console.WriteLine(Math.Round((double)_send / 1024, 2, MidpointRounding.AwayFromZero) + " TB Successfully added to your account.");
                     }else
-                        Console.WriteLine(_send + " GB Successfully added to your account.");
+                    Console.Clear();
+                Console.WriteLine(_send + " GB Successfully added to your account.");
                 }
                 catch (Exception ex)
                 {
                     _test++;
                     _error++;
-                                        /*For DEBUG
-                    Console.WriteLine("error: "+_error.ToString());
+                    /*Console.WriteLine("error: "+_error.ToString());
                     Console.WriteLine(ex.Message);*/
                 }
             }
