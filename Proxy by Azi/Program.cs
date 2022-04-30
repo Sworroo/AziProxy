@@ -60,7 +60,7 @@ namespace Proxy_by_Azi
             ProxyList.Clear();
             try
             {
-                HttpWebResponse response = (HttpWebResponse)((HttpWebRequest)WebRequest.Create("https://поебёмся.рф/getproxys.php")).GetResponse();
+                HttpWebResponse response = (HttpWebResponse)((HttpWebRequest)WebRequest.Create("https://api.proxyscrape.com?request=getproxies&proxytype=http&timeout=1000000&country=all&ssl=all&anonymity=all")).GetResponse();
                 string end = new StreamReader(response.GetResponseStream()).ReadToEnd();
                 MatchCollection matchCollections = new Regex("[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}:[0-9]{1,5}").Matches(end);
                 try
