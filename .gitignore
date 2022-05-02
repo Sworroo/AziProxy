@@ -1397,3 +1397,99 @@ Proxy by Azi/obj/Debug/netcoreapp3.1/Proxy by Azi.csproj.AssemblyReference.cache
 .vs/Proxy by Azi/v17/.suo
 .vs/Proxy by Azi/v17/.futdcache.v1
 .vs/Proxy by Azi/DesignTimeBuild/.dtbcache.v2
+build.bat
+build.bat.bak
+Proxy by Azi/bin/Release/netcoreapp3.1/linux-arm/AziProxyLinuxArm
+Proxy by Azi/bin/Release/netcoreapp3.1/linux-arm/AziProxyLinuxArm.deps.json
+Proxy by Azi/bin/Release/netcoreapp3.1/linux-arm/AziProxyLinuxArm.dll
+Proxy by Azi/bin/Release/netcoreapp3.1/linux-arm/AziProxyLinuxArm.pdb
+Proxy by Azi/bin/Release/netcoreapp3.1/linux-arm/AziProxyLinuxArm.runtimeconfig.dev.json
+Proxy by Azi/bin/Release/netcoreapp3.1/linux-arm/AziProxyLinuxArm.runtimeconfig.json
+Proxy by Azi/bin/Release/netcoreapp3.1/linux-arm/publish/AziProxyLinuxArm
+Proxy by Azi/bin/Release/netcoreapp3.1/linux-arm/publish/AziProxyLinuxArm.pdb
+Proxy by Azi/bin/Release/netcoreapp3.1/linux-arm/publish/Proxy by Azi linux-arm
+Proxy by Azi/bin/Release/netcoreapp3.1/linux-x64/AziProxyLinux64
+Proxy by Azi/bin/Release/netcoreapp3.1/linux-x64/AziProxyLinux64.deps.json
+Proxy by Azi/bin/Release/netcoreapp3.1/linux-x64/AziProxyLinux64.dll
+Proxy by Azi/bin/Release/netcoreapp3.1/linux-x64/AziProxyLinux64.pdb
+Proxy by Azi/bin/Release/netcoreapp3.1/linux-x64/AziProxyLinux64.runtimeconfig.dev.json
+Proxy by Azi/bin/Release/netcoreapp3.1/linux-x64/AziProxyLinux64.runtimeconfig.json
+Proxy by Azi/bin/Release/netcoreapp3.1/linux-x64/publish/AziProxyLinux64
+Proxy by Azi/bin/Release/netcoreapp3.1/linux-x64/publish/AziProxyLinux64.pdb
+Proxy by Azi/bin/Release/netcoreapp3.1/linux-x64/publish/Proxy by Azi linux-x64
+Proxy by Azi/bin/Release/netcoreapp3.1/osx-x64/AziProxyOSX64
+Proxy by Azi/bin/Release/netcoreapp3.1/osx-x64/AziProxyOSX64.deps.json
+Proxy by Azi/bin/Release/netcoreapp3.1/osx-x64/AziProxyOSX64.dll
+Proxy by Azi/bin/Release/netcoreapp3.1/osx-x64/AziProxyOSX64.pdb
+Proxy by Azi/bin/Release/netcoreapp3.1/osx-x64/AziProxyOSX64.runtimeconfig.dev.json
+Proxy by Azi/bin/Release/netcoreapp3.1/osx-x64/AziProxyOSX64.runtimeconfig.json
+Proxy by Azi/bin/Release/netcoreapp3.1/osx-x64/publish/AziProxyOSX64
+Proxy by Azi/bin/Release/netcoreapp3.1/osx-x64/publish/AziProxyOSX64.pdb
+Proxy by Azi/bin/Release/netcoreapp3.1/osx-x64/publish/Proxy by Azi osx-x64
+Proxy by Azi/bin/Release/netcoreapp3.1/win-arm/AziProxyWinArm.deps.json
+Proxy by Azi/bin/Release/netcoreapp3.1/win-arm/AziProxyWinArm.dll
+Proxy by Azi/bin/Release/netcoreapp3.1/win-arm/AziProxyWinArm.exe
+Proxy by Azi/bin/Release/netcoreapp3.1/win-arm/AziProxyWinArm.pdb
+Proxy by Azi/bin/Release/netcoreapp3.1/win-arm/AziProxyWinArm.runtimeconfig.dev.json
+Proxy by Azi/bin/Release/netcoreapp3.1/win-arm/AziProxyWinArm.runtimeconfig.json
+Proxy by Azi/bin/Release/netcoreapp3.1/win-arm/mscordaccore_arm_arm_4.700.22.16002.dll
+Proxy by Azi/bin/Release/netcoreapp3.1/win-arm/publish/AziProxyWinArm.exe
+Proxy by Azi/bin/Release/netcoreapp3.1/win-arm/publish/AziProxyWinArm.pdb
+Proxy by Azi/bin/Release/netcoreapp3.1/win-arm/publish/Proxy by Azi win-arm.exe
+Proxy by Azi/bin/Release/netcoreapp3.1/win-x64/AziProxyWin64.deps.json
+Proxy by Azi/bin/Release/netcoreapp3.1/win-x64/AziProxyWin64.dll
+Proxy by Azi/bin/Release/netcoreapp3.1/win-x64/AziProxyWin64.exe
+Proxy by Azi/bin/Release/netcoreapp3.1/win-x64/AziProxyWin64.pdb
+Proxy by Azi/bin/Release/netcoreapp3.1/win-x64/AziProxyWin64.runtimeconfig.dev.json
+Proxy by Azi/bin/Release/netcoreapp3.1/win-x64/AziProxyWin64.runtimeconfig.json
+Proxy by Azi/bin/Release/netcoreapp3.1/win-x64/mscordaccore_amd64_amd64_4.700.22.16002.dll
+Proxy by Azi/bin/Release/netcoreapp3.1/win-x64/publish/AziProxyWin64.exe
+Proxy by Azi/bin/Release/netcoreapp3.1/win-x64/publish/AziProxyWin64.pdb
+Proxy by Azi/bin/Release/netcoreapp3.1/win-x64/publish/Proxy by Azi win-x64.exe
+Proxy by Azi/bin/Release/netcoreapp3.1/win-x86/AziProxyWin32.deps.json
+Proxy by Azi/bin/Release/netcoreapp3.1/win-x86/AziProxyWin32.dll
+Proxy by Azi/bin/Release/netcoreapp3.1/win-x86/AziProxyWin32.exe
+Proxy by Azi/bin/Release/netcoreapp3.1/win-x86/AziProxyWin32.pdb
+Proxy by Azi/bin/Release/netcoreapp3.1/win-x86/AziProxyWin32.runtimeconfig.dev.json
+Proxy by Azi/bin/Release/netcoreapp3.1/win-x86/AziProxyWin32.runtimeconfig.json
+Proxy by Azi/bin/Release/netcoreapp3.1/win-x86/mscordaccore_x86_x86_4.700.22.16002.dll
+Proxy by Azi/bin/Release/netcoreapp3.1/win-x86/publish/AziProxyWin32.exe
+Proxy by Azi/bin/Release/netcoreapp3.1/win-x86/publish/AziProxyWin32.pdb
+Proxy by Azi/bin/Release/netcoreapp3.1/win-x86/publish/Proxy by Azi win-x86.exe
+Proxy by Azi/obj/Debug/netcoreapp3.1/Proxy by Azi.csproj.BuildWithSkipAnalyzers
+Proxy by Azi/obj/Release/netcoreapp3.1/linux-arm/AziProxyLinuxArm.deps.json
+Proxy by Azi/obj/Release/netcoreapp3.1/linux-arm/AziProxyLinuxArm.dll
+Proxy by Azi/obj/Release/netcoreapp3.1/linux-arm/AziProxyLinuxArm.pdb
+Proxy by Azi/obj/Release/netcoreapp3.1/linux-arm/Proxy by Azi.csproj.AssemblyReference.cache
+Proxy by Azi/obj/Release/netcoreapp3.1/linux-arm/Proxy by Azi.GeneratedMSBuildEditorConfig.editorconfig
+Proxy by Azi/obj/Release/netcoreapp3.1/linux-arm/PublishOutputs.fb5beeb725.txt
+Proxy by Azi/obj/Release/netcoreapp3.1/linux-x64/AziProxyLinux64.deps.json
+Proxy by Azi/obj/Release/netcoreapp3.1/linux-x64/AziProxyLinux64.dll
+Proxy by Azi/obj/Release/netcoreapp3.1/linux-x64/AziProxyLinux64.pdb
+Proxy by Azi/obj/Release/netcoreapp3.1/linux-x64/Proxy by Azi.csproj.AssemblyReference.cache
+Proxy by Azi/obj/Release/netcoreapp3.1/linux-x64/Proxy by Azi.GeneratedMSBuildEditorConfig.editorconfig
+Proxy by Azi/obj/Release/netcoreapp3.1/linux-x64/PublishOutputs.c46fdf8806.txt
+Proxy by Azi/obj/Release/netcoreapp3.1/osx-x64/AziProxyOSX64.deps.json
+Proxy by Azi/obj/Release/netcoreapp3.1/osx-x64/AziProxyOSX64.dll
+Proxy by Azi/obj/Release/netcoreapp3.1/osx-x64/AziProxyOSX64.pdb
+Proxy by Azi/obj/Release/netcoreapp3.1/osx-x64/Proxy by Azi.csproj.AssemblyReference.cache
+Proxy by Azi/obj/Release/netcoreapp3.1/osx-x64/Proxy by Azi.GeneratedMSBuildEditorConfig.editorconfig
+Proxy by Azi/obj/Release/netcoreapp3.1/osx-x64/PublishOutputs.635bf65e56.txt
+Proxy by Azi/obj/Release/netcoreapp3.1/win-arm/AziProxyWinArm.deps.json
+Proxy by Azi/obj/Release/netcoreapp3.1/win-arm/AziProxyWinArm.dll
+Proxy by Azi/obj/Release/netcoreapp3.1/win-arm/AziProxyWinArm.pdb
+Proxy by Azi/obj/Release/netcoreapp3.1/win-arm/Proxy by Azi.csproj.AssemblyReference.cache
+Proxy by Azi/obj/Release/netcoreapp3.1/win-arm/Proxy by Azi.GeneratedMSBuildEditorConfig.editorconfig
+Proxy by Azi/obj/Release/netcoreapp3.1/win-arm/PublishOutputs.0f64957faa.txt
+Proxy by Azi/obj/Release/netcoreapp3.1/win-x64/AziProxyWin64.deps.json
+Proxy by Azi/obj/Release/netcoreapp3.1/win-x64/AziProxyWin64.dll
+Proxy by Azi/obj/Release/netcoreapp3.1/win-x64/AziProxyWin64.pdb
+Proxy by Azi/obj/Release/netcoreapp3.1/win-x64/Proxy by Azi.csproj.AssemblyReference.cache
+Proxy by Azi/obj/Release/netcoreapp3.1/win-x64/Proxy by Azi.GeneratedMSBuildEditorConfig.editorconfig
+Proxy by Azi/obj/Release/netcoreapp3.1/win-x64/PublishOutputs.0938d9fde6.txt
+Proxy by Azi/obj/Release/netcoreapp3.1/win-x86/AziProxyWin32.deps.json
+Proxy by Azi/obj/Release/netcoreapp3.1/win-x86/AziProxyWin32.dll
+Proxy by Azi/obj/Release/netcoreapp3.1/win-x86/AziProxyWin32.pdb
+Proxy by Azi/obj/Release/netcoreapp3.1/win-x86/Proxy by Azi.csproj.AssemblyReference.cache
+Proxy by Azi/obj/Release/netcoreapp3.1/win-x86/Proxy by Azi.GeneratedMSBuildEditorConfig.editorconfig
+Proxy by Azi/obj/Release/netcoreapp3.1/win-x86/PublishOutputs.d5f45e294f.txt
