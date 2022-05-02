@@ -21,6 +21,14 @@ namespace Proxy_by_Azi
             {
                 Console.WriteLine("Enter your Client ID: ");
                 refferer = Console.ReadLine();
+                Guid guidResult;
+                bool isValid = Guid.TryParse(refferer, out guidResult);
+                while (!isValid)
+                {
+                    Console.WriteLine("Client ID incorrect\nEnter your Client ID: ");
+                    refferer = Console.ReadLine();
+                    isValid = Guid.TryParse(refferer, out guidResult);
+                }
                 File.WriteAllText(id, refferer);
             }
             else
@@ -41,7 +49,6 @@ namespace Proxy_by_Azi
 
         public static List<string> ProxyList = new List<string>();
         private static Random rnd = new Random();
-        private static bool _start;
         private static int _error;
         private static int _test;
         private static int _send;
@@ -106,25 +113,13 @@ namespace Proxy_by_Azi
             if (ProxyList.Count != 0)
             {
                 _start = true;
-                int num = 100;
                 try
                 {
-                    if (System.Runtime.InteropServices.RuntimeInformation.IsOSPlatform(System.Runtime.InteropServices.OSPlatform.Windows))
+                    Parallel.ForEach(ProxyList, new ParallelOptions { MaxDegreeOfParallelism = 200 },
+                    msg =>
                     {
-                        ThreadPool.SetMinThreads(num, num);
-                        ThreadPool.SetMaxThreads(num, num);
-                        foreach (string state in ProxyList)
-                        {
-                            ThreadPool.QueueUserWorkItem(new WaitCallback(mtd), state);
-                        }
-                    }
-                    else { 
-                        Parallel.ForEach(ProxyList, new ParallelOptions { MaxDegreeOfParallelism = 200 },
-                        msg =>
-                        {
-                            mtd(msg);
-                        });
-                }
+                        mtd(msg);
+                    });
                     //Console.WriteLine("END OF PROXYLIST"); //for debug
                     GetProxys();
                 }
