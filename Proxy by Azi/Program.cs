@@ -112,7 +112,6 @@ namespace Proxy_by_Azi
         {
             if (ProxyList.Count != 0)
             {
-                _start = true;
                 try
                 {
                     Parallel.ForEach(ProxyList, new ParallelOptions { MaxDegreeOfParallelism = 200 },
